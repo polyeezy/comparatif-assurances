@@ -1,0 +1,28 @@
+.full-height
+{
+ min-height: 90vh;
+}
+
+.padding-bottom
+{
+  padding-bottom: 60px !important;
+}
+
+.margin-bottom
+{
+  margin-bottom: 20px !important;
+}
+
+.nav-up {
+    top: -40px;
+}
+
+.bold
+{
+  font-weight: bold;
+}
+
+.hidden
+{
+  visibility: none !important;
+}

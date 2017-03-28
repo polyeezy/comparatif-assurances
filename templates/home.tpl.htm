@@ -1,0 +1,68 @@
+<div class="jumbotron">
+  <div class="container">
+
+  <h3>Les situations couvertes par votre contrat </h3>
+<h4> L'assurance Protection juridique intervient quand vous rencontrez un litige. Pour autant toutes les situations de litige ne sont pas couvertes dans tous les contrats. Parmi ces situations, indiquez les 5 que vous souhaitez voir en priorité couvertes par votre assurance Protection juridique </h4>
+
+
+    <div class="row">
+      <div class="col-lg-12" ng-controller="formController">
+
+        <div ng-repeat="question in questions">
+        <p>{{question.value}}</</p>
+            <ng-repeat repeat="question in questions">
+                <div class="row" ng-repeat="reponse in question.responses">
+          <div class="col-lg-12">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="checkbox" ng-model="checked" aria-label="..." ng-change="checkChanged(reponse, checked)" ng-disabled="checked == limit && !response.checked">
+              </span>
+              <input value="{{reponse.value}}" type="text" class="form-control" aria-label="...">
+            </div><!-- /input-group -->
+
+          </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+      </div>
+</br>
+
+
+    <p>Votre budget. Les tarifs des contrats d'assurance Protection juridique sont variables d’une assurance à une autre. Indiquez ci-après le budget mensuel que vous envisagez de consacrer à votre contrat Protection Juridique
+    </p>
+          <br>
+          <form name="myForm" ng-init="max = 1000" >
+              <label>
+                  <input type="radio" ng-model="max" ng-value="10" ng-change="ApplyPrice()">
+                Maximum de 10€
+              </label><br/>
+              <label>
+                  <input type="radio" ng-model="max" ng-value="15" ng-change="ApplyPrice()">
+                  Maximum de 15€
+              </label><br/>
+              <label>
+                  <input  type="radio" ng-model="max" ng-value="20" ng-change="ApplyPrice()">
+                  Maximum de 20€
+              </label><br/>
+              <label>
+                  <input selected type="radio" ng-model="max" value="1000" ng-change="ApplyPrice()">
+                  Pas de maximum
+
+              </label><br/>
+              <tt>max = {{max | json}}</tt><br/>
+          </form>
+          <h2>Resultat</h2>
+
+          <li ng-repeat="res in Assurances | filter:price | limitTo:3 | orderBy:'points':'reverse'">{{res.name}} - {{res.points}} - {{res.price}} €</li>
+    </div>
+
+
+
+  </div>
+</ng-repeat>
+
+
+</div>
+
+
+
+
+</div>
