@@ -1,0 +1,25 @@
+
+    <p>Votre budget. Les tarifs des contrats d'assurance Protection juridique sont variables d’une assurance à une autre. Indiquez ci-après le budget mensuel que vous envisagez de consacrer à votre contrat Protection Juridique
+    </p>
+          <br>
+          <form name="myForm" ng-init="max = 1000" >
+              <label>
+                  <input type="radio" ng-model="max" ng-value="10" ng-change="ApplyPrice(max)">
+                Maximum de 10€
+              </label><br/>
+              <label>
+                  <input type="radio" ng-model="max" ng-value="15" ng-change="ApplyPrice(max)">
+                  Maximum de 15€
+              </label><br/>
+              <label>
+                  <input  type="radio" ng-model="max" ng-value="20" ng-change="ApplyPrice(max)">
+                  Maximum de 20€
+              </label><br/>
+              <label>
+                  <input selected type="radio" ng-model="max" value="1000" ng-change="ApplyPrice(max)">
+                  Pas de maximum
+
+              </label><br/>
+            <!--  <tt>max = {{max | json}}</tt><br/>-->
+          </form>
+          <a href="#/resultat"> Afficher le resultat</a>

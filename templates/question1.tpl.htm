@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <div class="container">
+
+  <h3>Les situations couvertes par votre contrat </h3>
+  <h4> L'assurance Protection juridique intervient quand vous rencontrez un litige. Pour autant toutes les situations de litige ne sont pas couvertes dans tous les contrats. Parmi ces situations, indiquez les 5 que vous souhaitez voir en priorité couvertes par votre assurance Protection juridique </h4>
+
+  <div class="row">
+      <div class="col-lg-12" ng-controller="q1Controller">
+
+        <p>{{question.value}}</</p>
+                <div class="row" ng-repeat="reponse in question.responses">
+          <div class="col-lg-12">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <input type="checkbox" ng-model="checked" aria-label="..." ng-change="checkChanged(reponse, checked)" ng-disabled="checked == limit && !response.checked">
+              </span>
+              <input value="{{reponse.value}}" type="text" class="form-control" aria-label="...">
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+        </div>
+      </div>
+    </div>
+<a href="#/etape2"> Suivant</a>
+  </div>
+</div>

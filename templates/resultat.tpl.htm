@@ -1,0 +1,139 @@
+<h2>Resultat</h2>
+
+
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th><b>Classement</b></th>
+        <th>1er</th>
+        <th>2ème</th>
+        <th>3ème</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Nom de l'assurance</b></td>
+        <td>{{res1.name}}</td>
+        <td>{{res2.name}}</td>
+        <td>{{res3.name}}</td>
+
+      </tr>
+      <tr>
+        <td><b>Nom du contrat</b></td>
+        <td>{{Assurances[0].contract}}</td>
+        <td>{{Assurances[1].contract}}</td>
+        <td>{{Assurances[2].contract}}</td>
+
+      </tr>
+      <tr>
+        <td><b>Note globale</b></td>
+        <td>{{Assurances[0].points}}</td>
+        <td>{{Assurances[1].points}}</td>
+        <td>{{Assurances[2].points}}</td>
+      </tr>
+      <tr>
+        <td><b>Garenties souhaitées</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr ng-repeat="reponse in question1.responses">
+
+
+        <td ng-if="isChecked(reponse)">{{reponse.value}}</td>
+        <td ng-if="optionIsValid(reponse, 0, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, 0, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+
+        <td ng-if="optionIsValid(reponse, 1, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, 1, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+
+        <td ng-if="optionIsValid(reponse, 2, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, 2, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+
+      </tr>
+
+      <tr>
+        <td><b>Conditions d'intervention</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td><b>Sueil d'intervention amiable</b></td>
+        <td>{{Assurances[0].amiable}} €</td>
+        <td>{{Assurances[1].amiable}} €</td>
+        <td>{{Assurances[2].amiable}} €</td>
+      </tr>
+
+      <tr>
+        <td><b>Sueil d'intervention judiciaire</b></td>
+        <td>{{Assurances[0].judiciaire}} €</td>
+        <td>{{Assurances[1].judiciaire}} €</td>
+        <td>{{Assurances[2].judiciaire}} €</td>
+      </tr>
+
+      <tr>
+        <td><b>Franchise avant intervention</b></td>
+        <td>{{Assurances[0].franchise}} mois</td>
+        <td>{{Assurances[1].franchise}} mois</td>
+        <td>{{Assurances[2].franchise}} mois</td>
+      </tr>
+
+      <tr>
+        <td><b>Services souhaitées</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr ng-repeat="reponse in question2.responses">
+
+
+        <td ng-if="isChecked(reponse)">{{reponse.value}}</td>
+
+        <td ng-if="optionIsValid(reponse, 0, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, 0, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+
+        <td ng-if="optionIsValid(reponse, 1, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, 1, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+
+        <td ng-if="optionIsValid(reponse, 2, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, 2, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+
+      </tr>
+
+      <tr>
+        <td><b>Note Service</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td><b>Tarif</b></td>
+        <td>{{Assurances[0].price}} €</td>
+        <td>{{Assurances[1].price}} €</td>
+        <td>{{Assurances[2].price}} €</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <div class="row">
+
+<div  ng-repeat="res in Assurances | filter:maxPrice  | orderBy:'points':'reverse'" class="col-sm-3 card-success">
+  <div  class="card text-center card-success" style="backbound-color: green">
+    <div class="card-block card-success">
+      <h4 class="card-title">{{res.name}} ({{res.points}})</h4>
+      <p ng-if="res.price !== 0" sclass="card-text">{{res.price}} €</p>
+      <p ng-if="res.price == 0" sclass="card-text">Prix non connu</p>
+
+      <a href="#" class="btn btn-primary">Plus d'informations</a>
+    </div>
+</div>
+
+</div> -->
+<!-- </div> -->
