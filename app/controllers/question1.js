@@ -1,23 +1,30 @@
-angular.module('app').controller('formController', ['$scope', '$rootScope', function($scope, $rootScope){
+angular.module('app').controller('q1Controller', ['$scope', '$rootScope', function($scope, $rootScope){
 
 $scope.limit = 5;
 $scope.checked = 0;
 
 
-$rootScope.Assurances = [
-  {"name" : "Caisse Epargne",                 "points"  : 0}, // 0
-  {"name" : "Axa",                            "points"  : 0}, // 1
-  {"name" : "Allianz Vie Quotidienne",        "points"  : 0}, // 2
-  {"name" : "Allianz Vie Quotidienne plus",   "points"  : 0}, // 3
-  {"name" : "Pacifica",                       "points"  : 0}, // 4
-  {"name" : "GMF Formule Essentielle",        "points"  : 0}, // 5
-  {"name" : "GMF Formule Intégrales",         "points"  : 0}, // 6
-  {"name" : "Swiss Life Vie Privée",          "points"  : 0}, // 7
-  {"name" : "Swiss Life Patrimoine",          "points"  : 0}, // 8
-];
 
-$rootScope.questions = [
-  {
+if (!$rootScope.Assurances)
+{
+  $rootScope.Assurances = [
+    {"contract" : "-", "name" : "Caisse Epargne", "amiable" : 150 , "judiciaire" : 0,                "points"  : 0, "price" : 6.73}, // 0
+    {"contract" : "-","name" : "Axa", "amiable" : 0                   ,        "points"  : 0, "price" : 6.25}, // 1
+    {"contract" : "Vie Quotidienne","name" : "Allianz",  "amiable" : 100   , "judiciaire" : 0,   "points"  : 0, "price" : 6.10}, // 2
+    {"contract" : "Vie Quotidienne plus","name" : "Allianz", "amiable" : 100  , "judiciaire" : 0,  "points"  : 0, "price" : 0}, // 3
+    {"contract" : "-","name" : "Pacifica",   "amiable" : 150     , "judiciaire" : 0,               "points"  : 0, "price" : 6}, // 4
+    {"contract" : "Formule Essentielle","name" : "GMF",   "amiable" : 150  , "judiciaire" : 0,   "points"  : 0, "price" : 6.42}, // 5
+    {"contract" : "Formule Intégrales","name" : "GMF",  "amiable" : 150   , "judiciaire" : 0,    "points"  : 0, "price" : 0}, // 6
+    {"contract" : "Vie Privée","name" : "Swiss Life",  "amiable" : 150   , "judiciaire" : 0,     "points"  : 0, "price" : 7.66}, // 7
+    {"contract" : "Patrimoine","name" : "Swiss Life",  "amiable" : 150  , "judiciaire" : 0,      "points"  : 0, "price" : 15.33}, // 8
+  ]
+  $rootScope.maxPrice = 1000;
+  $rootScope.checked = []
+
+
+}
+
+$rootScope.question ={
     "value"     : "Parmi ces situations, indiquez les 5 que vous souhaitez voir en priorité couvertes par votre assurance Protection juridique",
     "responses" : [
                     {'value'        : "Litige avec un professionnel suite à l'achat d'un bien",
@@ -27,8 +34,8 @@ $rootScope.questions = [
                         [-1, -3, -1, -1, -1, -1, -1, 1, 1],
                         [0, 0, 0, 0, 0, -2, -2, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, -7, 0]
-
-                      ]
+                      ],
+                      'id' : 1.1
                     }, //1
                     { 'value' : "Litige de voisinage",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 0, 20],
@@ -37,7 +44,8 @@ $rootScope.questions = [
                         [-1, -3, -1, -1, -1, -1, -1, 0, -1],
                         [0, -3, 0, 0, 0, -2, -2, 0, 0],
                         [0, -3, 0, 0, 0, -2, -2, 0, 0]
-                      ]
+                      ],
+                      'id' : 1.2
                     }, //2
                     {'value' : "Litige avec votre employeur",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 0, 20],
@@ -46,9 +54,8 @@ $rootScope.questions = [
                         [-1, -3, -1, -1, -1, -1, -1, -1, -1],
                         [0, -3, 0, 0, 0, -2, -2, 0, 0],
                         [-2, -1, -1, -1, -1, -1, -1, -1, -1],
-
-
-                      ]
+                      ],
+                      'id' : 1.3
                     }, //3
                     {'value' : "Litige avec votre propriétaire",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 20, 20],
@@ -58,7 +65,10 @@ $rootScope.questions = [
                         [0, 0, 0, 0, 0, -2, -2, 0, 0],
                         [0, -2, 0, 0, 0, 0, 0, 0, 0]
 
-                      ]}, //4
+                      ]
+                      ,
+                      'id' : 1.4
+                    }, //4
 
                     {'value' : "Litige avec votre locataire",
                       'diff' : [0, 20, 20, 20, 0, 20, 20, 0, 20],
@@ -67,7 +77,8 @@ $rootScope.questions = [
                         [0, -3, -3, -3, 0, -1, -1, 0, -1],
                         [0, 0, 0, 0, 0, -2, -2, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0]
-                      ]
+                      ],
+                      'id' : 1.5
                     }, //5
                     {'value' : "Ltige avec un héritier dans le cadre de la succession d'un proche",
                       'diff' : [20, 20, 0, 20, 20, 20, 20, 0, 20],
@@ -76,9 +87,10 @@ $rootScope.questions = [
                         [-1, -3, -1, -1, -1, -1, -1, 1, -1],
                         [0, 0, 0, 0, 0, -2, -2, 0, -5],
                         [0, 0, 0, 0, -1, 0, 0, 0, -1]
-
-
-                      ]}, //6
+                      ]
+                      ,
+                      'id' : 1.6
+                    }, //6
 
                     {'value' : "Litige avec un professionnel de la santé (médecin, dentiste, chirurgien) suite à une intervention médicale",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 20, 20],
@@ -87,7 +99,10 @@ $rootScope.questions = [
                         [-1, -3, -1, -1, -1, -1, -1, -1, -1],
                         [0, 0, 0, 0, 0, -2, -2, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0]
-                      ]}, //7
+                      ]
+                      ,
+                      'id' : 1.7
+                    }, //7
 
                     {'value' : "Litige avec votre constructeur ",
                       'diff' : [0, 20, 20, 20, 0, 0, 20, 20, 20],
@@ -96,7 +111,10 @@ $rootScope.questions = [
                         [0, -3, -1, -1, 0, 0, -1, -1, -1],
                         [0, 0, -5, -5, 0, 0, -4, -5, -5],
                         [0, -2, -4, -4, 0, 0, -4, 0, 0]
-                      ]}, //8
+                      ]
+                      ,
+                      'id' : 1.8
+                    }, //8
                     {'value' : "Divorce, rupture de PACS ou d'union libre ",
                       'diff' : [0, 20, 0, 20, 0, 0, 20, 0, 0],
                       'correctifs'  : [
@@ -106,7 +124,10 @@ $rootScope.questions = [
                         [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
-                      ]}, //9
+                      ]
+                      ,
+                      'id' : 1.9
+                    }, //9
                     {'value' : "Action en paiement d'une pension alimentaire ",
                       'diff' : [0, 20, 0, 20, 0, 0, 20, 0, 0],
                       'correctifs'  : [
@@ -117,7 +138,10 @@ $rootScope.questions = [
 
 
 
-                      ]}, //10
+                      ]
+                      ,
+                      'id' : 1.10
+                    }, //10
 
                     {'value' : "Litige avec votre assistante maternelle ou votre employé(e) de maison",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 20, 20],
@@ -129,7 +153,10 @@ $rootScope.questions = [
 
 
 
-                      ]}, //11
+                      ]
+                      ,
+                      'id' : 1.11
+                    }, //11
                     {'value' : "Litige avec le fisc (redressement fiscal)",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 0, 20],
                       'correctifs'  : [
@@ -140,7 +167,10 @@ $rootScope.questions = [
 
 
 
-                      ]}, //12
+                      ]
+                      ,
+                      'id' : 1.2
+                    }, //12
                     {'value' : "Contestation d'une infraction au code de la route ",
                       'diff' : [0, 0, 0, 20, 0, 0, 0, 0, 0],
                       'correctifs'  : [
@@ -150,7 +180,9 @@ $rootScope.questions = [
                         [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
-                      ]}, //13
+                      ],
+                      'id' : 1.13
+                    }, //13
                     {'value' : "Litige en votre qualité de caution",
                       'diff' : [20, 20, 0, 20, 0, 0, 20, 0, 0],
                       'correctifs'  : [
@@ -159,15 +191,25 @@ $rootScope.questions = [
                         [0, 0, 0, 0, 0, 0, -2, 0, 0],
                         [-3, -3, 0, 0, 0, 0, -4, 0, 0]
 
-                      ]}, //14
+                      ]
+                      ,
+                      'id' : 1.14
+                    }, //14
                   ]
                 }
-];
 
 
 $scope.checkChanged = function(response, item){
+console.log($rootScope.checked);
+  console.log($rootScope.Assurances);
     if(item)
     {
+      $rootScope.checked.push(response.id)
+
+      if ($rootScope.checked.indexOf(response.id) == -1) {
+        $rootScope.checked.push(response.id);
+      }
+
       for (i = 0; i < response.diff.length; i++)
       {
         $scope.Assurances[i].points += response.diff[i];
@@ -185,6 +227,9 @@ $scope.checkChanged = function(response, item){
     {
       var i = 0;
 
+      var index = $rootScope.checked.indexOf(response.id);
+      $rootScope.checked.splice(index, 1);
+
       while (i < response.diff.length)
       {
         $scope.Assurances[i].points -= response.diff[i];
@@ -197,6 +242,7 @@ $scope.checkChanged = function(response, item){
       }
       $scope.checked--;
     }
+
 }
 
 }]);
