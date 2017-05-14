@@ -289,6 +289,10 @@ $scope.optionIsValid = function(question, index, value){
     return (question.diff[index] === value)
 }
 
+$scope.franchise = function(id){
+    return $rootScope.Assurances[1].franchise;
+}
+
 
 if (!$rootScope.Assurances)
 {

@@ -77,9 +77,12 @@
 
       <tr>
         <td><b>Franchise avant intervention</b></td>
-        <td>{{Assurances[0].franchise}} mois</td>
-        <td>{{Assurances[1].franchise}} mois</td>
-        <td>{{Assurances[2].franchise}} mois</td>
+        <td ng-if="franchise(0) == 0">Non</td>
+        <td ng-if="franchise(0) !== 0">{{Assurances[1].franchise}} mois</td>
+        <td ng-if="!franchise(1)">Non</td>
+        <td ng-if="franchise(1)">{{Assurances[1].franchise}} mois</td>
+        <td ng-if="!franchise(2)">Non</td>
+        <td ng-if="franchise(2)">{{Assurances[1].franchise}} mois</td>
       </tr>
 
       <tr>
