@@ -27,7 +27,8 @@ if (!$rootScope.Assurances)
 $rootScope.question ={
     "value"     : "Parmi ces situations, indiquez les 5 que vous souhaitez voir en priorité couvertes par votre assurance Protection juridique",
     "responses" : [
-                    {'value'        : "Litige avec un professionnel suite à l'achat d'un bien",
+                    {
+                      'value'        : "Litige avec un professionnel suite à l'achat d'un bien",
                       'diff'        : [20, 20, 20, 20, 20, 20, 20, 20, 20],
                       'correctifs'  : [
                         [-1, 0, -1, -1, -1, -1, -1, 0, 0],
@@ -35,7 +36,7 @@ $rootScope.question ={
                         [0, 0, 0, 0, 0, -2, -2, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, -7, 0]
                       ],
-                      'id' : 1.1
+                      'id' : 11
                     }, //1
                     { 'value' : "Litige de voisinage",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 0, 20],
@@ -45,7 +46,7 @@ $rootScope.question ={
                         [0, -3, 0, 0, 0, -2, -2, 0, 0],
                         [0, -3, 0, 0, 0, -2, -2, 0, 0]
                       ],
-                      'id' : 1.2
+                      'id' : 12
                     }, //2
                     {'value' : "Litige avec votre employeur",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 0, 20],
@@ -55,7 +56,7 @@ $rootScope.question ={
                         [0, -3, 0, 0, 0, -2, -2, 0, 0],
                         [-2, -1, -1, -1, -1, -1, -1, -1, -1],
                       ],
-                      'id' : 1.3
+                      'id' : 13
                     }, //3
                     {'value' : "Litige avec votre propriétaire",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 20, 20],
@@ -67,7 +68,7 @@ $rootScope.question ={
 
                       ]
                       ,
-                      'id' : 1.4
+                      'id' : 14
                     }, //4
 
                     {'value' : "Litige avec votre locataire",
@@ -78,7 +79,7 @@ $rootScope.question ={
                         [0, 0, 0, 0, 0, -2, -2, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0]
                       ],
-                      'id' : 1.5
+                      'id' : 15
                     }, //5
                     {'value' : "Ltige avec un héritier dans le cadre de la succession d'un proche",
                       'diff' : [20, 20, 0, 20, 20, 20, 20, 0, 20],
@@ -89,7 +90,7 @@ $rootScope.question ={
                         [0, 0, 0, 0, -1, 0, 0, 0, -1]
                       ]
                       ,
-                      'id' : 1.6
+                      'id' : 16
                     }, //6
 
                     {'value' : "Litige avec un professionnel de la santé (médecin, dentiste, chirurgien) suite à une intervention médicale",
@@ -101,7 +102,7 @@ $rootScope.question ={
                         [0, 0, 0, 0, 0, 0, 0, 0, 0]
                       ]
                       ,
-                      'id' : 1.7
+                      'id' : 17
                     }, //7
 
                     {'value' : "Litige avec votre constructeur ",
@@ -113,7 +114,7 @@ $rootScope.question ={
                         [0, -2, -4, -4, 0, 0, -4, 0, 0]
                       ]
                       ,
-                      'id' : 1.8
+                      'id' : 18
                     }, //8
                     {'value' : "Divorce, rupture de PACS ou d'union libre ",
                       'diff' : [0, 20, 0, 20, 0, 0, 20, 0, 0],
@@ -126,7 +127,7 @@ $rootScope.question ={
 
                       ]
                       ,
-                      'id' : 1.9
+                      'id' : 19
                     }, //9
                     {'value' : "Action en paiement d'une pension alimentaire ",
                       'diff' : [0, 20, 0, 20, 0, 0, 20, 0, 0],
@@ -140,7 +141,7 @@ $rootScope.question ={
 
                       ]
                       ,
-                      'id' : 1.10
+                      'id' : 110
                     }, //10
 
                     {'value' : "Litige avec votre assistante maternelle ou votre employé(e) de maison",
@@ -155,7 +156,7 @@ $rootScope.question ={
 
                       ]
                       ,
-                      'id' : 1.11
+                      'id' : 111
                     }, //11
                     {'value' : "Litige avec le fisc (redressement fiscal)",
                       'diff' : [20, 20, 20, 20, 20, 20, 20, 0, 20],
@@ -169,7 +170,7 @@ $rootScope.question ={
 
                       ]
                       ,
-                      'id' : 1.2
+                      'id' : 112
                     }, //12
                     {'value' : "Contestation d'une infraction au code de la route ",
                       'diff' : [0, 0, 0, 20, 0, 0, 0, 0, 0],
@@ -181,7 +182,7 @@ $rootScope.question ={
 
 
                       ],
-                      'id' : 1.13
+                      'id' : 113
                     }, //13
                     {'value' : "Litige en votre qualité de caution",
                       'diff' : [20, 20, 0, 20, 0, 0, 20, 0, 0],
@@ -193,15 +194,13 @@ $rootScope.question ={
 
                       ]
                       ,
-                      'id' : 1.14
+                      'id' : 114
                     }, //14
                   ]
                 }
 
 
 $scope.checkChanged = function(response, item){
-console.log($rootScope.checked);
-  console.log($rootScope.Assurances);
     if(item)
     {
       $rootScope.checked.push(response.id)

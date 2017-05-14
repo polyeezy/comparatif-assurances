@@ -32,13 +32,13 @@ $scope.question ={
                       'diff'        : [5, 5, 5, 5, 5, 5, 5, 5, 5],
                       'correctifs'  : [
                       ],
-                      'id' : 2.1
+                      'id' : 21
                     }, //1
                     { 'value' : "Du conseil juridique en cas de litige",
                     'diff'        : [5, 5, 5, 5, 5, 5, 5, 5, 5],
                       'correctifs'  : [
                       ],
-                      'id' : 2.2
+                      'id' : 22
                     }, //2
                     {'value' : "L'intervention d'un juriste avec la partie adverse pour trouver une solution amiable ",
                     'diff'        : [5, 5, 5, 5, 5, 5, 5, 5, 5],
@@ -47,7 +47,7 @@ $scope.question ={
 
 
                       ],
-                      'id' : 2.3
+                      'id' : 23
                     }, //3
                     {'value' : "Une bonne prise en charge des honoraires d'avocat en cas de procès",
                       'diff' : [2, 4, 6, 6, 4, 4, 4, 4, 4],
@@ -55,14 +55,14 @@ $scope.question ={
 
 
                       ],
-                      'id' : 2.4}, //4
+                      'id' : 24}, //4
 
                     {'value' : "Un service d'aide et de conseil préalable à la signature de contrat ",
                       'diff' : [0, 5, 0, 0, 0, 0, 0, 0, 0],
                       'correctifs'  : [
 
                       ],
-                      'id' : 2.5
+                      'id' : 25
                     }, //5
                     {'value' : "Le recours à un expert automobile avant l’achat d'un véhicule",
                       'diff' : [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -71,21 +71,21 @@ $scope.question ={
 
 
                       ],
-                      'id' : 2.6}, //6
+                      'id' : 26}, //6
 
                     {'value' : "Le recours à un expert immobilier avant l'achat d'un bien immobilier",
                       'diff' : [0, 5, 0, 0, 0, 0, 0, 0, 0],
                       'correctifs'  : [
 
                       ],
-                      'id' : 2.7}, //7
+                      'id' : 27}, //7
 
                     {'value' : "La prise en charge des frais d'huissier pour exécuter un jugement ",
                       'diff' : [5, 5, 4, 4, 5, 5, 4, 4, 4],
                       'correctifs'  : [
 
                       ],
-                      'id' : 2.8}, //8
+                      'id' : 28}, //8
                     {'value' : "La possibilité de prendre rendez-vous avec un juriste de votre assurance ",
                       'diff' : [0, 5, 0, 0, 0, 0, 0, 0, 0],
                       'correctifs'  : [
@@ -93,7 +93,7 @@ $scope.question ={
 
 
                       ],
-                      'id' : 2.9}, //9
+                      'id' : 29}, //9
                     {'value' : "L'accès à une base d'informations juridiques ",
                       'diff' : [0, 0, 0, 0, 0, 0, 0, 0, 0],
                       'correctifs'  : [
@@ -102,15 +102,13 @@ $scope.question ={
 
 
                       ],
-                      'id' : 2.10}, //10
+                      'id' : 210}, //10
 
                   ]
                 }
 
 
 $scope.checkChanged = function(response, item){
-console.log('ok');
-  console.log($rootScope.Assurances);
 
     if(item)
     {

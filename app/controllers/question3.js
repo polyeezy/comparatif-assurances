@@ -26,7 +26,6 @@ if (!$rootScope.Assurances)
 $scope.ApplyPrice = function(max)
 {
   $rootScope.maxPrice = max;
-  console.log($rootScope.maxPrice);
 }
 
 $scope.checkChanged = function(response, item){
