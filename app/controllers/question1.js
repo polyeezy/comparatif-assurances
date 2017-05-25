@@ -6,15 +6,14 @@ $scope.checked = 0;
 
 
 if (!$rootScope.Assurances)
-{
-  $rootScope.Assurances = [
-    {"contract" : "-", "name" : "Caisse Epargne", "amiable" : 150 , "judiciaire" : 0,                "points"  : 0, "price" : 6.73}, // 0
+{$rootScope.Assurances =
+    [{"contract" : "-", "name" : "Caisse Epargne", "amiable" : 150 , "judiciaire" : 0,                "points"  : 0, "price" : 6.73}, // 0
     {"contract" : "-","name" : "Axa", "amiable" : 0                   ,        "points"  : 0, "price" : 6.25}, // 1
-    {"contract" : "Vie Quotidienne","name" : "Allianz",  "amiable" : 100   , "judiciaire" : 0,   "points"  : 0, "price" : 6.10}, // 2
-    {"contract" : "Vie Quotidienne plus","name" : "Allianz", "amiable" : 100  , "judiciaire" : 0,  "points"  : 0, "price" : 0}, // 3
-    {"contract" : "-","name" : "Pacifica",   "amiable" : 150     , "judiciaire" : 0,               "points"  : 0, "price" : 6}, // 4
+    {"contract" : "Vie Quotidienne","name" : "Allianz",  "amiable" : 100   , "judiciaire" : 0,   "points"  : 0, "price" : 6.58}, // 2
+    {"contract" : "Vie Quotidienne plus","name" : "Allianz", "amiable" : 100  , "judiciaire" : 0,  "points"  : 0, "price" : 16}, // 3
+    {"contract" : "-","name" : "Pacifica",   "amiable" : 150     , "judiciaire" : 0,               "points"  : 0, "price" : 7}, // 4
     {"contract" : "Formule Essentielle","name" : "GMF",   "amiable" : 150  , "judiciaire" : 0,   "points"  : 0, "price" : 6.42}, // 5
-    {"contract" : "Formule Intégrales","name" : "GMF",  "amiable" : 150   , "judiciaire" : 0,    "points"  : 0, "price" : 0}, // 6
+    {"contract" : "Formule Intégrales","name" : "GMF",  "amiable" : 150   , "judiciaire" : 0,    "points"  : 0, "price" : 18}, // 6
     {"contract" : "Vie Privée","name" : "Swiss Life",  "amiable" : 150   , "judiciaire" : 0,     "points"  : 0, "price" : 7.66}, // 7
     {"contract" : "Patrimoine","name" : "Swiss Life",  "amiable" : 150  , "judiciaire" : 0,      "points"  : 0, "price" : 15.33}, // 8
   ]
@@ -205,6 +204,8 @@ $scope.checkChanged = function(response, item){
     {
       $rootScope.checked.push(response.id)
 
+
+
       if ($rootScope.checked.indexOf(response.id) == -1) {
         $rootScope.checked.push(response.id);
       }
@@ -220,7 +221,7 @@ $scope.checkChanged = function(response, item){
         $scope.Assurances[idx].points += response.correctifs[j][idx];
       }
       $scope.checked++;
-
+  console.log($rootScope.Assurances[0].name + ' ' + $rootScope.Assurances[0].points);
     }
     else
     {

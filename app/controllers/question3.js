@@ -42,6 +42,7 @@ $scope.checkChanged = function(response, item){
         $scope.Assurances[idx].points += response.correctifs[j][idx];
       }
       $scope.checked++;
+        console.log($rootScope.Assurances[0].name + ' ' + $rootScope.Assurances[0].points);
 
     }
     else

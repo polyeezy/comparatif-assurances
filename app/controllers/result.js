@@ -11,6 +11,23 @@ angular.module('app').filter('checked', function(id) {
 angular.module('app').controller('resultController', ['$scope', '$rootScope', '$location', '$filter',  function($scope, $rootScope, $location, $filter){
 
     if (!$rootScope.Assurances) {
+
+
+        $rootScope.Assurances =
+            [{"contract" : "-", "name" : "Caisse Epargne", "amiable" : 150 , "judiciaire" : 0,                "points"  : 0, "price" : 6.73}, // 0
+                {"contract" : "-","name" : "Axa", "amiable" : 0                   ,        "points"  : 0, "price" : 6.25}, // 1
+                {"contract" : "Vie Quotidienne","name" : "Allianz",  "amiable" : 100   , "judiciaire" : 0,   "points"  : 0, "price" : 6.58}, // 2
+                {"contract" : "Vie Quotidienne plus","name" : "Allianz", "amiable" : 100  , "judiciaire" : 0,  "points"  : 0, "price" : 16}, // 3
+                {"contract" : "-","name" : "Pacifica",   "amiable" : 150     , "judiciaire" : 0,               "points"  : 0, "price" : 7}, // 4
+                {"contract" : "Formule Essentielle","name" : "GMF",   "amiable" : 150  , "judiciaire" : 0,   "points"  : 0, "price" : 6.42}, // 5
+                {"contract" : "Formule Intégrales","name" : "GMF",  "amiable" : 150   , "judiciaire" : 0,    "points"  : 0, "price" : 18}, // 6
+                {"contract" : "Vie Privée","name" : "Swiss Life",  "amiable" : 150   , "judiciaire" : 0,     "points"  : 0, "price" : 7.66}, // 7
+                {"contract" : "Patrimoine","name" : "Swiss Life",  "amiable" : 150  , "judiciaire" : 0,      "points"  : 0, "price" : 15.33}, // 8
+            ];
+            $rootScope.maxPrice = 1000;
+            $rootScope.checked = [];
+
+
         $location.path('/etape1');
     }
 
@@ -322,6 +339,8 @@ $scope.maxPrice = function (item)
 $rootScope.Assurances = $filter('orderBy')($rootScope.Assurances, 'points', 'reverse');
 
 
+// AXA
+
 if ($rootScope.checked.indexOf(15) !== -1)
   $rootScope.Assurances[1].price = 11;
 
@@ -331,11 +350,24 @@ if ($rootScope.checked.indexOf(16) !== -1 || $rootScope.checked.indexOf(19) !==
 if ($rootScope.checked.indexOf(18) !== -1)
     $rootScope.Assurances[1].price = 21.25;
 
-
 if (($rootScope.checked.indexOf(15) !== -1 && $rootScope.checked.indexOf(16) !== -1 ) || ($rootScope.checked.indexOf(110) !== -1) || ($rootScope.checked.indexOf(110) !== -1 && $rootScope.checked.indexOf(1.8) !== -1 ))
 $rootScope.Assurances[1].price = 33.5;
 
-$scope.res1 = $rootScope.Assurances[0];
+//VQ
+    if ($rootScope.checked.indexOf(15) !== -1)
+        $rootScope.Assurances[2].price = 13;
+//VQ+
+    if ($rootScope.checked.indexOf(15) !== -1)
+        $rootScope.Assurances[3].price = 22;
+//
+    if ($rootScope.checked.indexOf(15) !== -1)
+        $rootScope.Assurances[5].price = 12;
+
+    if ($rootScope.checked.indexOf(15) !== -1)
+        $rootScope.Assurances[6].price = 24;
+
+
+        $scope.res1 = $rootScope.Assurances[0];
 $scope.res2 = $rootScope.Assurances[1];
 $scope.res3 = $rootScope.Assurances[2];
 
