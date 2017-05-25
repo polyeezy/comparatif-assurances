@@ -21,16 +21,16 @@
       </tr>
       <tr>
         <td><b>Nom du contrat</b></td>
-        <td>{{Assurances[0].contract}}</td>
-        <td>{{Assurances[1].contract}}</td>
-        <td>{{Assurances[2].contract}}</td>
+        <td>{{AssurancesSorted[0].contract}}</td>
+        <td>{{AssurancesSorted[1].contract}}</td>
+        <td>{{AssurancesSorted[2].contract}}</td>
 
       </tr>
       <tr>
         <td><b>Note globale</b></td>
-        <td>{{Assurances[0].points}}</td>
-        <td>{{Assurances[1].points}}</td>
-        <td>{{Assurances[2].points}}</td>
+        <td>{{AssurancesSorted[0].points}}</td>
+        <td>{{AssurancesSorted[1].points}}</td>
+        <td>{{AssurancesSorted[2].points}}</td>
       </tr>
       <tr>
         <td><b>Garenties souhaitées</b></td>
@@ -63,16 +63,16 @@
 
       <tr>
         <td><b>Sueil d'intervention amiable</b></td>
-        <td>{{Assurances[0].amiable}} €</td>
-        <td>{{Assurances[1].amiable}} €</td>
-        <td>{{Assurances[2].amiable}} €</td>
+        <td>{{AssurancesSorted[0].amiable}} €</td>
+        <td>{{AssurancesSorted[1].amiable}} €</td>
+        <td>{{AssurancesSorted[2].amiable}} €</td>
       </tr>
 
       <tr>
         <td><b>Sueil d'intervention judiciaire</b></td>
-        <td>{{Assurances[0].judiciaire}} €</td>
-        <td>{{Assurances[1].judiciaire}} €</td>
-        <td>{{Assurances[2].judiciaire}} €</td>
+        <td>{{AssurancesSorted[0].judiciaire}} €</td>
+        <td>{{AssurancesSorted[1].judiciaire}} €</td>
+        <td>{{AssurancesSorted[2].judiciaire}} €</td>
       </tr>
 
       <tr>
@@ -97,14 +97,14 @@
 
         <td ng-if="isChecked(reponse)">{{reponse.value}}</td>
 
-        <td ng-if="optionIsValid(reponse, 0, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
-        <td ng-if="!optionIsValid(reponse, 0, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[0].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, AssurancesSorted[0].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
 
-        <td ng-if="optionIsValid(reponse, 1, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
-        <td ng-if="!optionIsValid(reponse, 1, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[1].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, AssurancesSorted[1].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
 
-        <td ng-if="optionIsValid(reponse, 2, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
-        <td ng-if="!optionIsValid(reponse, 2, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[2].index, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="!optionIsValid(reponse, AssurancesSorted[2].index, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
 
       </tr>
 
@@ -117,9 +117,9 @@
 
       <tr>
         <td><b>Tarif</b></td>
-        <td>{{Assurances[0].price}} €</td>
-        <td>{{Assurances[1].price}} €</td>
-        <td>{{Assurances[2].price}} €</td>
+        <td>{{AssurancesSorted[0].price}} €</td>
+        <td>{{AssurancesSorted[1].price}} €</td>
+        <td>{{AssurancesSorted[2].price}} €</td>
       </tr>
     </tbody>
   </table>
