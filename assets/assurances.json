@@ -1,0 +1,91 @@
+[
+  {
+    "contract":"-",
+    "name":"Caisse Epargne",
+    "amiable":150,
+    "judiciaire":0,
+    "points":0,
+    "price":6.73,
+    "index":0,
+    "franchise":0
+  },
+  {
+    "contract":"-",
+    "name":"Axa",
+    "amiable":0,
+    "points":0,
+    "price":6.25,
+    "index":1,
+    "franchise":0
+  },
+  {
+    "contract":"Vie Quotidienne",
+    "name":"Allianz",
+    "amiable":100,
+    "judiciaire":0,
+    "points":0,
+    "price":6.58,
+    "index":2,
+    "franchise":0
+  },
+  {
+    "contract":"Vie Quotidienne plus",
+    "name":"Allianz",
+    "amiable":100,
+    "judiciaire":0,
+    "points":0,
+    "price":16,
+    "index":3,
+    "franchise":0
+  },
+  {
+    "contract":"-",
+    "name":"Pacifica",
+    "amiable":150,
+    "judiciaire":0,
+    "points":0,
+    "price":7,
+    "index":4,
+    "franchise":0
+  },
+  {
+    "contract":"Formule Essentielle",
+    "name":"GMF",
+    "amiable":150,
+    "judiciaire":0,
+    "points":0,
+    "price":6.42,
+    "index":5,
+    "franchise":2
+  },
+  {
+    "contract":"Formule Intégrales",
+    "name":"GMF",
+    "amiable":150,
+    "judiciaire":0,
+    "points":0,
+    "price":18,
+    "index":6,
+    "franchise":2
+  },
+  {
+    "contract":"Vie Privée",
+    "name":"Swiss Life",
+    "amiable":150,
+    "judiciaire":0,
+    "points":0,
+    "price":7.66,
+    "index":7,
+    "franchise":0
+  },
+  {
+    "contract":"Patrimoine",
+    "name":"Swiss Life",
+    "amiable":150,
+    "judiciaire":0,
+    "points":0,
+    "price":15.33,
+    "index":8,
+    "franchise":0
+  }
+]

@@ -41,7 +41,10 @@ gulp.task('concat', function () {
 });
 
 gulp.task('serve', function() {
-  connect.server();
+  connect.server({
+      port: 8888
+  });
 });
 
 gulp.task('default', ['vendor-app','vendor-css', 'vendor-js', 'serve']);
+gulp.task('dev', ['vendor-app','vendor-css', 'vendor-js', 'serve']);

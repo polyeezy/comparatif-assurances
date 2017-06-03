@@ -97,14 +97,24 @@
 
         <td ng-if="isChecked(reponse)">{{reponse.value}}</td>
 
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[0].index, 0) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[0].index, 2) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:black"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[0].index, 4) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:orange"></span></td>
         <td ng-if="optionIsValid(reponse, AssurancesSorted[0].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
-        <td ng-if="!optionIsValid(reponse, AssurancesSorted[0].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[0].index, 6) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
 
+
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[1].index, 0) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[1].index, 2) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:black"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[1].index, 4) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:orange"></span></td>
         <td ng-if="optionIsValid(reponse, AssurancesSorted[1].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
-        <td ng-if="!optionIsValid(reponse, AssurancesSorted[1].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[1].index, 6) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
 
-        <td ng-if="optionIsValid(reponse, AssurancesSorted[2].index, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
-        <td ng-if="!optionIsValid(reponse, AssurancesSorted[2].index, 20) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[2].index, 0) && isChecked(reponse)"><span class="glyphicon glyphicon-remove success" style="color:red"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[2].index, 2) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:black"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[2].index, 4) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:orange"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[2].index, 5) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
+        <td ng-if="optionIsValid(reponse, AssurancesSorted[2].index, 6) && isChecked(reponse)"><span class="glyphicon glyphicon-ok success" style="color:green"></span><span class="glyphicon glyphicon-ok success" style="color:green"></span></td>
 
       </tr>
 
