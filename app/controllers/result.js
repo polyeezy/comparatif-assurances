@@ -1,5 +1,7 @@
 angular.module('app').controller('resultController', ['$scope', '$rootScope', '$location', '$filter', '$http',  function($scope, $rootScope, $location, $filter, $http){
 
+    $scope.ready = false;
+
     if (!$rootScope.Assurances) {
         $location.path('/etape1');
     }
@@ -11,6 +13,10 @@ angular.module('app').controller('resultController', ['$scope', '$rootScope', '$
     };
 
     $scope.optionIsValid = function(question, index, value){
+
+        console.log(question.diff[index]);
+
+
         return (question.diff[index] === value)
     };
 
@@ -78,6 +84,8 @@ $rootScope.Assurances[1].price = 33.5;
     });
     $http.get('assets/question2.json').then(function(response) {
         $scope.question2 = response.data;
+        $scope.ready = true;
+
     });
 
 }]);

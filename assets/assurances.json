@@ -1,32 +1,32 @@
 [
   {
-    "contract":"-",
-    "name":"Caisse Epargne",
-    "amiable":150,
-    "judiciaire":0,
-    "points":0,
-    "price":6.73,
-    "index":0,
-    "franchise":0
+    "contract"    : "-",
+    "name"        : "Caisse Epargne",
+    "amiable"     : 150,
+    "judiciaire"  : 0,
+    "points"      : 0,
+    "price"       : 6.73,
+    "index"       : 0,
+    "franchise"   : 0
   },
   {
-    "contract":"-",
-    "name":"Axa",
-    "amiable":0,
-    "points":0,
-    "price":6.25,
-    "index":1,
-    "franchise":0
+    "contract"    : "-",
+    "name"        : "Axa",
+    "amiable"     : 0,
+    "points"      : 0,
+    "price"       : 6.25,
+    "index"       : 1,
+    "franchise"   : 0
   },
   {
-    "contract":"Vie Quotidienne",
-    "name":"Allianz",
-    "amiable":100,
-    "judiciaire":0,
-    "points":0,
-    "price":6.58,
-    "index":2,
-    "franchise":0
+    "contract"    : "Vie Quotidienne",
+    "name"        : "Allianz",
+    "amiable"     : 100,
+    "judiciaire"  : 0,
+    "points"      : 0,
+    "price"       : 6.58,
+    "index"       : 2,
+    "franchise"   : 0
   },
   {
     "contract":"Vie Quotidienne plus",
