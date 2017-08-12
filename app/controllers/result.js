@@ -1,6 +1,7 @@
 angular.module('app').controller('resultController', ['$scope', '$rootScope', '$location', '$filter', '$http',  function($scope, $rootScope, $location, $filter, $http){
 
     $scope.ready = false;
+    console.log($rootScope);
 
     if (!$rootScope.Assurances) {
         $location.path('/etape1');
@@ -12,11 +13,23 @@ angular.module('app').controller('resultController', ['$scope', '$rootScope', '$
         }
     };
 
+
+    $scope.sortByPrice = function(array, max){
+
+        var rtn = [];
+
+        array.forEach(function(item){
+
+            console.log(item.price + ' ' +  max)
+
+            if (item.price < max){
+                rtn.push(item);
+            }
+        });
+        return (rtn);
+    };
+
     $scope.optionIsValid = function(question, index, value){
-
-        console.log(question.diff[index]);
-
-
         return (question.diff[index] === value)
     };
 
@@ -74,6 +87,7 @@ $rootScope.Assurances[1].price = 33.5;
 //FRANCHISE
 
     $rootScope.AssurancesSorted = $filter('orderBy')($rootScope.Assurances, 'points', 'reverse');
+    $rootScope.AssurancesSorted = $scope.sortByPrice($rootScope.AssurancesSorted, $rootScope.maxPrice);
 
     $scope.res1 = $rootScope.AssurancesSorted[0];
     $scope.res2 = $rootScope.AssurancesSorted[1];
