@@ -1,35 +1,35 @@
 {
-  "name": "angularize-boilerplate",
-  "version": "1.0.0",
-  "description": "An angular boilerplate using MaterializeCss",
-  "main": "index.js",
-  "dependencies": {
-    "angular": "^1.5.8",
-    "animate.css": "^3.5.2",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-concat-vendor": "0.0.4",
-    "gulp-connect": "^5.0.0",
-    "materialize-css": "^0.97.7"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/polyeezy/angularize-boilerplate.git"
-  },
-  "keywords": [
-    "angular",
-    "material",
-    "flat",
-    "materialize"
-  ],
-  "author": "Valerian Polizzi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/polyeezy/angularize-boilerplate/issues"
-  },
-  "homepage": "https://github.com/polyeezy/angularize-boilerplate#readme"
+	"name": "angularize-boilerplate",
+	"version": "1.0.0",
+	"description": "An angular boilerplate using MaterializeCss",
+	"main": "index.js",
+	"dependencies": {
+		"angular": "^1.5.8",
+		"animate.css": "^3.5.2",
+		"gulp": "^4.0.0",
+		"gulp-concat": "^2.6.0",
+		"gulp-concat-vendor": "0.0.4",
+		"gulp-connect": "^5.0.0",
+		"materialize-css": "^0.97.7"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/polyeezy/angularize-boilerplate.git"
+	},
+	"keywords": [
+		"angular",
+		"material",
+		"flat",
+		"materialize"
+	],
+	"author": "Valerian Polizzi",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/polyeezy/angularize-boilerplate/issues"
+	},
+	"homepage": "https://github.com/polyeezy/angularize-boilerplate#readme"
 }
